@@ -3,6 +3,6 @@ import { covidTrackingController } from "../controllers/covidTracking.controller
 export const covidTrackingRouter = Router();
 const covidtrackingController = new covidTrackingController();
 
-covidTrackingRouter.get("/test", covidtrackingController.test());
+covidTrackingRouter.get("/clear-redis", covidtrackingController.clearRedis());
 covidTrackingRouter.get("/getdaily", covidtrackingController.fetchCovidTotalDaily());
 covidTrackingRouter.get("/getdaily-provinces", covidtrackingController.fetchCovidTotalDailyByProvices());

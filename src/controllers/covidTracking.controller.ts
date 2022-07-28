@@ -2,6 +2,7 @@ import { RequestHandler, Request } from "express";
 import { BaseController } from "./abstract/BaseController";
 import axios from "axios";
 import { redis } from "../utils/redis";
+import { calulateExpire } from "../utils/calulateExpire";
 
 type DailyResponse = {
   txn_date: string;
@@ -50,11 +51,12 @@ export class covidTrackingController extends BaseController {
         try {
           const fetch = await axios.get(`${process.env.API_Total_Daily}`);
           data = fetch.data;
+          const expire = calulateExpire();
           await redis.set("CovidDaily", JSON.stringify(data));
-          await redis.expire("CovidDaily", 10);
+          await redis.expire("CovidDaily", expire);
           console.log("No cache");
           this.responseData = { success: true, data };
-          res.locals = { ...this.responseData };
+          res.locals = { ...this.responseData, expireSec: expire };
 
           res.send(res.locals);
         } catch (error: any) {
@@ -69,13 +71,6 @@ export class covidTrackingController extends BaseController {
         res.locals = { ...this.responseData };
         res.send(res.locals);
       }
-
-      // try {
-      // } catch (err: any) {
-      //   this.responseData = { success: false, msg: err.message };
-      //   res.locals = { ...this.responseData };
-      //   res.send(res.locals);
-      // }
     };
   }
 
@@ -86,8 +81,9 @@ export class covidTrackingController extends BaseController {
         try {
           const fetch = await axios.get(`${process.env.API_Total_Daily_PROVINCES}`);
           data = fetch.data;
+          const expire = calulateExpire();
           await redis.set("CovidDailyByProvinces", JSON.stringify(data));
-          await redis.expire("CovidDailyByProvinces", 10);
+          await redis.expire("CovidDailyByProvinces", expire);
           console.log("No cache");
           this.responseData = { success: true, data };
           res.locals = { ...this.responseData };
@@ -104,6 +100,15 @@ export class covidTrackingController extends BaseController {
         res.locals = { ...this.responseData };
         res.send(res.locals);
       }
+    };
+  }
+  clearRedis(): RequestHandler {
+    return async (req, res) => {
+      await redis.del("CovidDaily");
+      await redis.del("CovidDailyByProvinces");
+      this.responseData = { success: true, msg: "Redis was cleared" };
+      res.locals = { ...this.responseData };
+      res.status(200).send(res.locals);
     };
   }
 }
