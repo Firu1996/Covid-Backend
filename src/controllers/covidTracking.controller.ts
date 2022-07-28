@@ -56,7 +56,7 @@ export class covidTrackingController extends BaseController {
           await redis.expire("CovidDaily", expire);
           console.log("No cache");
           this.responseData = { success: true, data };
-          res.locals = { ...this.responseData, expireSec: expire };
+          res.locals = { ...this.responseData };
 
           res.send(res.locals);
         } catch (error: any) {
