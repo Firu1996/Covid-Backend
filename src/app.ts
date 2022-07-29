@@ -1,7 +1,8 @@
 import express, { Application } from "express";
 import morgan from "morgan";
 import { apiRoute } from "./routes";
-import { redixConnect } from "./utils/redis";
+import { redisConnect } from "./utils/redis";
+import cors from "cors";
 export default class App {
   private app: Application;
 
@@ -21,11 +22,12 @@ export default class App {
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: false }));
     this.app.use(morgan("dev"));
+    this.app.use(cors());
   }
   private initialRoute() {
     this.app.use(apiRoute);
   }
   private initialRedis() {
-    redixConnect();
+    redisConnect();
   }
 }
