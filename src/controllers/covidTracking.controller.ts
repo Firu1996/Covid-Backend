@@ -51,12 +51,12 @@ export class covidTrackingController extends BaseController {
         try {
           const fetch = await axios.get(`${process.env.API_Total_Daily}`);
           data = fetch.data;
-          const expire = calulateExpire();
+          const redisExpire = calulateExpire();
           await redis.set("CovidDaily", JSON.stringify(data));
-          await redis.expire("CovidDaily", expire);
-          console.log("No cache");
+          await redis.expire("CovidDaily", redisExpire);
+          console.log("No cache - CovidDaily");
           this.responseData = { success: true, data };
-          res.locals = { ...this.responseData };
+          res.locals = { ...this.responseData, redisExpire };
 
           res.send(res.locals);
         } catch (error: any) {
@@ -65,7 +65,7 @@ export class covidTrackingController extends BaseController {
           res.send(res.locals);
         }
       } else {
-        console.log("Have a cache");
+        console.log("Have a cache - CovidDaily");
         const cache = JSON.parse(data);
         this.responseData = { success: true, data: cache };
         res.locals = { ...this.responseData };
@@ -81,12 +81,12 @@ export class covidTrackingController extends BaseController {
         try {
           const fetch = await axios.get(`${process.env.API_Total_Daily_PROVINCES}`);
           data = fetch.data;
-          const expire = calulateExpire();
+          const redisExpire = calulateExpire();
           await redis.set("CovidDailyByProvinces", JSON.stringify(data));
-          await redis.expire("CovidDailyByProvinces", expire);
-          console.log("No cache");
+          await redis.expire("CovidDailyByProvinces", redisExpire);
+          console.log("No cache - CovidDailyByProvinces");
           this.responseData = { success: true, data };
-          res.locals = { ...this.responseData };
+          res.locals = { ...this.responseData, redisExpire };
           res.send(res.locals);
         } catch (error: any) {
           this.responseData = { success: false, msg: error.message };
@@ -94,7 +94,7 @@ export class covidTrackingController extends BaseController {
           res.send(res.locals);
         }
       } else {
-        console.log("Have a cache");
+        console.log("Have a cache - CovidDailyByProvinces");
         const cache = JSON.parse(data);
         this.responseData = { success: true, data: cache };
         res.locals = { ...this.responseData };
@@ -106,9 +106,39 @@ export class covidTrackingController extends BaseController {
     return async (req, res) => {
       await redis.del("CovidDaily");
       await redis.del("CovidDailyByProvinces");
+      await redis.del("CovidDailyChart");
       this.responseData = { success: true, msg: "Redis was cleared" };
       res.locals = { ...this.responseData };
       res.status(200).send(res.locals);
+    };
+  }
+
+  fetchDailyForChart(): RequestHandler {
+    return async (req, res) => {
+      let data = await redis.get("CovidDailyChart");
+      if (data === null) {
+        try {
+          const fetch = await axios.get(`${process.env.API_Total_Chart}`);
+          data = fetch.data;
+          const redisExpire = calulateExpire();
+          await redis.set("CovidDailyChart", JSON.stringify(data));
+          await redis.expire("CovidDailyChart", redisExpire);
+          console.log("No cache - CovidDailyChart");
+          this.responseData = { success: true, data };
+          res.locals = { ...this.responseData, redisExpire };
+          res.send(res.locals);
+        } catch (error: any) {
+          this.responseData = { success: false, msg: error.message };
+          res.locals = { ...this.responseData };
+          res.send(res.locals);
+        }
+      } else {
+        console.log("Have a cache - CovidDailyChart");
+        const cache = JSON.parse(data);
+        this.responseData = { success: true, data: cache };
+        res.locals = { ...this.responseData };
+        res.send(res.locals);
+      }
     };
   }
 }
