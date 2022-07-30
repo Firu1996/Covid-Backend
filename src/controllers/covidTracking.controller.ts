@@ -3,7 +3,7 @@ import { BaseController } from "./abstract/BaseController";
 import axios from "axios";
 import { redis } from "../utils/redis";
 import { calulateExpire } from "../utils/calulateExpire";
-
+import { provinceEnObject } from "../locale/provinceMap";
 type DailyResponse = {
   txn_date: string;
   new_case: number;
@@ -17,7 +17,7 @@ type DailyResponse = {
   update_date: string;
 };
 
-type DailyResponseByProvinces = {
+type DailyByProvinces = {
   txn_date: string;
   province: string;
   new_case: number;
@@ -29,6 +29,11 @@ type DailyResponseByProvinces = {
   new_recovered: number;
   total_recovered: number;
   update_date: string;
+};
+
+type DailyResponseByProvinces = {
+  success: boolean;
+  data: DailyByProvinces[] | null;
 };
 
 export class covidTrackingController extends BaseController {
@@ -57,7 +62,6 @@ export class covidTrackingController extends BaseController {
           console.log("No cache - CovidDaily");
           this.responseData = { success: true, data };
           res.locals = { ...this.responseData, redisExpire };
-
           res.send(res.locals);
         } catch (error: any) {
           this.responseData = { success: false, msg: error.message };
@@ -76,16 +80,31 @@ export class covidTrackingController extends BaseController {
 
   fetchCovidTotalDailyByProvices(): RequestHandler {
     return async (req, res) => {
-      let data = await redis.get("CovidDailyByProvinces");
-      if (data === null) {
+      let dataRedis = await redis.get("CovidDailyByProvinces");
+      if (dataRedis === null) {
         try {
           const fetch = await axios.get(`${process.env.API_Total_Daily_PROVINCES}`);
-          data = fetch.data;
+          let data = fetch.data;
           const redisExpire = calulateExpire();
-          await redis.set("CovidDailyByProvinces", JSON.stringify(data));
+          let newData = null;
+          if (data) {
+            newData = data.map((old: any, index: any) => {
+              let newObj = old;
+              let indexNewData = index;
+              provinceEnObject.forEach((obj, index) => {
+                if (indexNewData === index) {
+                  newObj = Object.assign({}, newObj, { provinceEn: obj.provinceEn });
+                }
+              });
+
+              return newObj;
+            });
+          }
+          console.log(newData);
+          await redis.set("CovidDailyByProvinces", JSON.stringify(newData));
           await redis.expire("CovidDailyByProvinces", redisExpire);
           console.log("No cache - CovidDailyByProvinces");
-          this.responseData = { success: true, data };
+          this.responseData = { success: true, data: newData };
           res.locals = { ...this.responseData, redisExpire };
           res.send(res.locals);
         } catch (error: any) {
@@ -95,7 +114,7 @@ export class covidTrackingController extends BaseController {
         }
       } else {
         console.log("Have a cache - CovidDailyByProvinces");
-        const cache = JSON.parse(data);
+        const cache = JSON.parse(dataRedis);
         this.responseData = { success: true, data: cache };
         res.locals = { ...this.responseData };
         res.send(res.locals);
