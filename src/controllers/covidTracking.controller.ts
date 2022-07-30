@@ -100,7 +100,6 @@ export class covidTrackingController extends BaseController {
               return newObj;
             });
           }
-          console.log(newData);
           await redis.set("CovidDailyByProvinces", JSON.stringify(newData));
           await redis.expire("CovidDailyByProvinces", redisExpire);
           console.log("No cache - CovidDailyByProvinces");
