@@ -1,236 +1,236 @@
 export const provinceEnObject = [
   {
-    provinceEn: "krabi"
+    provinceEn: "Krabi"
   },
   {
-    provinceEn: "bangkok"
+    provinceEn: "Bangkok"
   },
   {
-    provinceEn: "kanchanaburi"
+    provinceEn: "Kanchanaburi"
   },
   {
-    provinceEn: "kalasin"
+    provinceEn: "Kalasin"
   },
   {
-    provinceEn: "kamphaengphet"
+    provinceEn: "Kamphaengphet"
   },
   {
-    provinceEn: "khonkaen"
+    provinceEn: "Khonkaen"
   },
   {
-    provinceEn: "chanthaburi"
+    provinceEn: "Chanthaburi"
   },
   {
-    provinceEn: "chachoengsao"
+    provinceEn: "Chachoengsao"
   },
   {
-    provinceEn: "chonburi"
+    provinceEn: "Chonburi"
   },
   {
-    provinceEn: "chainat"
+    provinceEn: "Chainat"
   },
   {
-    provinceEn: "chaiyaphum"
+    provinceEn: "Chaiyaphum"
   },
   {
-    provinceEn: "chumphon"
+    provinceEn: "Chumphon"
   },
   {
-    provinceEn: "trang"
+    provinceEn: "Trang"
   },
   {
-    provinceEn: "trat"
+    provinceEn: "Trat"
   },
   {
-    provinceEn: "tak"
+    provinceEn: "Tak"
   },
   {
-    provinceEn: "nakhonnayok"
+    provinceEn: "Nakhonnayok"
   },
   {
-    provinceEn: "nakhonpathom"
+    provinceEn: "Nakhonpathom"
   },
   {
-    provinceEn: "nakhonphanom"
+    provinceEn: "Nakhonphanom"
   },
   {
-    provinceEn: "nakhonratchasima"
+    provinceEn: "Nakhonratchasima"
   },
   {
-    provinceEn: "nakhonsithammarat"
+    provinceEn: "Nakhonsithammarat"
   },
   {
-    provinceEn: "nakhonsawan"
+    provinceEn: "Nakhonsawan"
   },
   {
-    provinceEn: "nonthaburi"
+    provinceEn: "Nonthaburi"
   },
   {
-    provinceEn: "narathiwat"
+    provinceEn: "Narathiwat"
   },
   {
-    provinceEn: "nan"
+    provinceEn: "Nan"
   },
   {
-    provinceEn: "บึงกาฬ"
+    provinceEn: "BuengKan"
   },
   {
-    provinceEn: "buriram"
+    provinceEn: "Buriram"
   },
   {
-    provinceEn: "pathumthani"
+    provinceEn: "Pathumthani"
   },
   {
-    provinceEn: "prachuapkhirikhan"
+    provinceEn: "Prachuapkhirikhan"
   },
   {
-    provinceEn: "prachinburi"
+    provinceEn: "Prachinburi"
   },
   {
-    provinceEn: "pattani"
+    provinceEn: "Pattani"
   },
   {
-    provinceEn: "ayutthaya"
+    provinceEn: "Ayutthaya"
   },
   {
-    provinceEn: "phayao"
+    provinceEn: "Phayao"
   },
   {
-    provinceEn: "phangnga"
+    provinceEn: "Phangnga"
   },
   {
-    provinceEn: "phatthalung"
+    provinceEn: "Phatthalung"
   },
   {
-    provinceEn: "phichit"
+    provinceEn: "Phichit"
   },
   {
-    provinceEn: "phitsanulok"
+    provinceEn: "Phitsanulok"
   },
   {
-    provinceEn: "phuket"
+    provinceEn: "Phuket"
   },
   {
-    provinceEn: "mahasarakham"
+    provinceEn: "Mahasarakham"
   },
   {
-    provinceEn: "mukdahan"
+    provinceEn: "Mukdahan"
   },
   {
-    provinceEn: "yala"
+    provinceEn: "Yala"
   },
   {
-    provinceEn: "yasothon"
+    provinceEn: "Yasothon"
   },
   {
-    provinceEn: "roiet"
+    provinceEn: "Roiet"
   },
   {
-    provinceEn: "ranong"
+    provinceEn: "Ranong"
   },
   {
-    provinceEn: "rayong"
+    provinceEn: "Rayong"
   },
   {
-    provinceEn: "ratchaburi"
+    provinceEn: "Ratchaburi"
   },
   {
-    provinceEn: "lopburi"
+    provinceEn: "Lopburi"
   },
   {
-    provinceEn: "lampang"
+    provinceEn: "Lampang"
   },
   {
-    provinceEn: "lamphun"
+    provinceEn: "Lamphun"
   },
   {
-    provinceEn: "sisaket"
+    provinceEn: "Sisaket"
   },
   {
-    provinceEn: "sakonnakhon"
+    provinceEn: "Sakonnakhon"
   },
   {
-    provinceEn: "songkhla"
+    provinceEn: "Songkhla"
   },
   {
-    provinceEn: "satun"
+    provinceEn: "Satun"
   },
   {
-    provinceEn: "samutprakan"
+    provinceEn: "Samutprakan"
   },
   {
-    provinceEn: "samutsongkhram"
+    provinceEn: "Samutsongkhram"
   },
   {
-    provinceEn: "samutsakhon"
+    provinceEn: "Samutsakhon"
   },
   {
-    provinceEn: "saraburi"
+    provinceEn: "Saraburi"
   },
   {
-    provinceEn: "sakaeo"
+    provinceEn: "Sakaeo"
   },
   {
-    provinceEn: "singburi"
+    provinceEn: "Singburi"
   },
   {
-    provinceEn: "suphanburi"
+    provinceEn: "Suphanburi"
   },
   {
-    provinceEn: "suratthani"
+    provinceEn: "Suratthani"
   },
   {
-    provinceEn: "surin"
+    provinceEn: "Surin"
   },
   {
-    provinceEn: "sukhothai"
+    provinceEn: "Sukhothai"
   },
   {
-    provinceEn: "nongkhai"
+    provinceEn: "Songkhai"
   },
   {
-    provinceEn: "nongbualamphu"
+    provinceEn: "Nongbualamphu"
   },
   {
-    provinceEn: "angthong"
+    provinceEn: "Angthong"
   },
   {
-    provinceEn: "amnatcharoen"
+    provinceEn: "Amnatcharoen"
   },
   {
-    provinceEn: "udonthani"
+    provinceEn: "Udonthani"
   },
   {
-    provinceEn: "uttaradit"
+    provinceEn: "Uttaradit"
   },
   {
-    provinceEn: "uthaithani"
+    provinceEn: "Uthaithani"
   },
   {
-    provinceEn: "ubonratchathani"
+    provinceEn: "Ubonratchathani"
   },
   {
-    provinceEn: "chiangrai"
+    provinceEn: "Chiangrai"
   },
   {
-    provinceEn: "chiangmai"
+    provinceEn: "Chiangmai"
   },
   {
-    provinceEn: "phetchaburi"
+    provinceEn: "Phetchaburi"
   },
   {
-    provinceEn: "phetchabun"
+    provinceEn: "Phetchabun"
   },
   {
-    provinceEn: "loei"
+    provinceEn: "Loei"
   },
   {
-    provinceEn: "phrae"
+    provinceEn: "Phrae"
   },
   {
-    provinceEn: "maehongson"
+    provinceEn: "Maehongson"
   },
   {
-    provinceEn: "not specified"
+    provinceEn: "Not specified"
   }
 ];
