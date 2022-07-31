@@ -77,6 +77,7 @@ export const provinceEnObject = [
   { province: "สุโขทัย", provinceEn: "Sukhothai" },
   { province: "สงขลา", provinceEn: "Songkhai" },
   { province: "หนองบัวลำภู", provinceEn: "Nongbualamphu" },
+  { province: "หนองคาย", provinceEn: "NongKhai" },
   { province: "อ่างทอง", provinceEn: "Angthong" },
   { province: "อำนาจเจริญ", provinceEn: "Amnatcharoen" },
   { province: "อุดรธานี", provinceEn: "Udonthani" },
