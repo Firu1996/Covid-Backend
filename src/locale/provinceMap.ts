@@ -1,236 +1,94 @@
+export type TypeProvinceEnObject = {
+  province: string;
+  provinceEn: string;
+};
+
 export const provinceEnObject = [
   {
+    province: "กระบี่",
     provinceEn: "Krabi"
   },
   {
+    province: "กรุงเทพมหานคร",
     provinceEn: "Bangkok"
   },
   {
+    province: "กาญจนบุรี",
     provinceEn: "Kanchanaburi"
   },
-  {
-    provinceEn: "Kalasin"
-  },
-  {
-    provinceEn: "Kamphaengphet"
-  },
-  {
-    provinceEn: "Khonkaen"
-  },
-  {
-    provinceEn: "Chanthaburi"
-  },
-  {
-    provinceEn: "Chachoengsao"
-  },
-  {
-    provinceEn: "Chonburi"
-  },
-  {
-    provinceEn: "Chainat"
-  },
-  {
-    provinceEn: "Chaiyaphum"
-  },
-  {
-    provinceEn: "Chumphon"
-  },
-  {
-    provinceEn: "Trang"
-  },
-  {
-    provinceEn: "Trat"
-  },
-  {
-    provinceEn: "Tak"
-  },
-  {
-    provinceEn: "Nakhonnayok"
-  },
-  {
-    provinceEn: "Nakhonpathom"
-  },
-  {
-    provinceEn: "Nakhonphanom"
-  },
-  {
-    provinceEn: "Nakhonratchasima"
-  },
-  {
-    provinceEn: "Nakhonsithammarat"
-  },
-  {
-    provinceEn: "Nakhonsawan"
-  },
-  {
-    provinceEn: "Nonthaburi"
-  },
-  {
-    provinceEn: "Narathiwat"
-  },
-  {
-    provinceEn: "Nan"
-  },
-  {
-    provinceEn: "BuengKan"
-  },
-  {
-    provinceEn: "Buriram"
-  },
-  {
-    provinceEn: "Pathumthani"
-  },
-  {
-    provinceEn: "Prachuapkhirikhan"
-  },
-  {
-    provinceEn: "Prachinburi"
-  },
-  {
-    provinceEn: "Pattani"
-  },
-  {
-    provinceEn: "Ayutthaya"
-  },
-  {
-    provinceEn: "Phayao"
-  },
-  {
-    provinceEn: "Phangnga"
-  },
-  {
-    provinceEn: "Phatthalung"
-  },
-  {
-    provinceEn: "Phichit"
-  },
-  {
-    provinceEn: "Phitsanulok"
-  },
-  {
-    provinceEn: "Phuket"
-  },
-  {
-    provinceEn: "Mahasarakham"
-  },
-  {
-    provinceEn: "Mukdahan"
-  },
-  {
-    provinceEn: "Yala"
-  },
-  {
-    provinceEn: "Yasothon"
-  },
-  {
-    provinceEn: "Roiet"
-  },
-  {
-    provinceEn: "Ranong"
-  },
-  {
-    provinceEn: "Rayong"
-  },
-  {
-    provinceEn: "Ratchaburi"
-  },
-  {
-    provinceEn: "Lopburi"
-  },
-  {
-    provinceEn: "Lampang"
-  },
-  {
-    provinceEn: "Lamphun"
-  },
-  {
-    provinceEn: "Sisaket"
-  },
-  {
-    provinceEn: "Sakonnakhon"
-  },
-  {
-    provinceEn: "Songkhla"
-  },
-  {
-    provinceEn: "Satun"
-  },
-  {
-    provinceEn: "Samutprakan"
-  },
-  {
-    provinceEn: "Samutsongkhram"
-  },
-  {
-    provinceEn: "Samutsakhon"
-  },
-  {
-    provinceEn: "Saraburi"
-  },
-  {
-    provinceEn: "Sakaeo"
-  },
-  {
-    provinceEn: "Singburi"
-  },
-  {
-    provinceEn: "Suphanburi"
-  },
-  {
-    provinceEn: "Suratthani"
-  },
-  {
-    provinceEn: "Surin"
-  },
-  {
-    provinceEn: "Sukhothai"
-  },
-  {
-    provinceEn: "Songkhai"
-  },
-  {
-    provinceEn: "Nongbualamphu"
-  },
-  {
-    provinceEn: "Angthong"
-  },
-  {
-    provinceEn: "Amnatcharoen"
-  },
-  {
-    provinceEn: "Udonthani"
-  },
-  {
-    provinceEn: "Uttaradit"
-  },
-  {
-    provinceEn: "Uthaithani"
-  },
-  {
-    provinceEn: "Ubonratchathani"
-  },
-  {
-    provinceEn: "Chiangrai"
-  },
-  {
-    provinceEn: "Chiangmai"
-  },
-  {
-    provinceEn: "Phetchaburi"
-  },
-  {
-    provinceEn: "Phetchabun"
-  },
-  {
-    provinceEn: "Loei"
-  },
-  {
-    provinceEn: "Phrae"
-  },
-  {
-    provinceEn: "Maehongson"
-  },
-  {
-    provinceEn: "Not specified"
-  }
+  { province: "กาฬสินธุ์", provinceEn: "Kalasin" },
+  { province: "กำแพงเพชร", provinceEn: "Kamphaengphet" },
+  { province: "ขอนแก่น", provinceEn: "Khonkaen" },
+  { province: "จันทบุรี", provinceEn: "Chanthaburi" },
+  { province: "ฉะเชิงเทรา", provinceEn: "Chachoengsao" },
+  { province: "ชลบุรี", provinceEn: "Chonburi" },
+  { province: "ชัยนาท", provinceEn: "Chainat" },
+  { province: "ชัยภูมิ", provinceEn: "Chaiyaphum" },
+  { province: "ชุมพร", provinceEn: "Chumphon" },
+  { province: "ตรัง", provinceEn: "Trang" },
+  { province: "ตราด", provinceEn: "Trat" },
+  { province: "ตาก", provinceEn: "Tak" },
+  { province: "นครนายก", provinceEn: "Nakhonnayok" },
+  { province: "นครปฐม", provinceEn: "Nakhonpathom" },
+  { province: "นครพนม", provinceEn: "Nakhonphanom" },
+  { province: "นครราชสีมา", provinceEn: "Nakhonratchasima" },
+  { province: "นครศรีธรรมราช", provinceEn: "Nakhonsithammarat" },
+  { province: "นครสวรรค์", provinceEn: "Nakhonsawan" },
+  { province: "นนทบุรี", provinceEn: "Nonthaburi" },
+  { province: "นราธิวาส", provinceEn: "Narathiwat" },
+  { province: "น่าน", provinceEn: "Nan" },
+  { province: "บึงกาฬ", provinceEn: "BuengKan" },
+  { province: "บุรีรัมย์", provinceEn: "Buriram" },
+  { province: "ปทุมธานี", provinceEn: "Pathumthani" },
+  { province: "ประจวบคีรีขันธ์", provinceEn: "Prachuapkhirikhan" },
+  { province: "ปราจีนบุรี", provinceEn: "Prachinburi" },
+  { province: "ปัตตานี", provinceEn: "Pattani" },
+  { province: "พระนครศรีอยุธยา", provinceEn: "Ayutthaya" },
+  { province: "พะเยา", provinceEn: "Phayao" },
+  { province: "พังงา", provinceEn: "Phangnga" },
+  { province: "พัทลุง", provinceEn: "Phatthalung" },
+  { province: "พิจิตร", provinceEn: "Phichit" },
+  { province: "พิษณุโลก", provinceEn: "Phitsanulok" },
+  { province: "ภูเก็ต", provinceEn: "Phuket" },
+  { province: "มหาสารคาม", provinceEn: "Mahasarakham" },
+  { province: "มุกดาหาร", provinceEn: "Mukdahan" },
+  { province: "ยะลา", provinceEn: "Yala" },
+  { province: "ยโสธร", provinceEn: "Yasothon" },
+  { province: "ร้อยเอ็ด", provinceEn: "Roiet" },
+  { province: "ระนอง", provinceEn: "Ranong" },
+  { province: "ระยอง", provinceEn: "Rayong" },
+  { province: "ราชบุรี", provinceEn: "Ratchaburi" },
+  { province: "ลพบุรี", provinceEn: "Lopburi" },
+  { province: "ลำปาง", provinceEn: "Lampang" },
+  { province: "ลำพูน", provinceEn: "Lamphun" },
+  { province: "ศรีสะเกษ", provinceEn: "Sisaket" },
+  { province: "สกลนคร", provinceEn: "Sakonnakhon" },
+  { province: "สงขลา", provinceEn: "Songkhla" },
+  { province: "สตูล", provinceEn: "Satun" },
+  { province: "สมุทรปราการ", provinceEn: "Samutprakan" },
+  { province: "สมุทรสงคราม", provinceEn: "Samutsongkhram" },
+  { province: "สมุทรสาคร", provinceEn: "Samutsakhon" },
+  { province: "สระบุรี", provinceEn: "Saraburi" },
+  { province: "สระแก้ว", provinceEn: "Sakaeo" },
+  { province: "สิงห์บุรี", provinceEn: "Singburi" },
+  { province: "สุพรรณบุรี", provinceEn: "Suphanburi" },
+  { province: "สุราษฎร์ธานี", provinceEn: "Suratthani" },
+  { province: "สุรินทร์", provinceEn: "Surin" },
+  { province: "สุโขทัย", provinceEn: "Sukhothai" },
+  { province: "สงขลา", provinceEn: "Songkhai" },
+  { province: "หนองบัวลำภู", provinceEn: "Nongbualamphu" },
+  { province: "อ่างทอง", provinceEn: "Angthong" },
+  { province: "อำนาจเจริญ", provinceEn: "Amnatcharoen" },
+  { province: "อุดรธานี", provinceEn: "Udonthani" },
+  { province: "อุตรดิตถ์", provinceEn: "Uttaradit" },
+  { province: "อุทัยธานี", provinceEn: "Uthaithani" },
+  { province: "อุบลราชธานี", provinceEn: "Ubonratchathani" },
+  { province: "เชียงราย", provinceEn: "Chiangrai" },
+  { province: "เชียงใหม่", provinceEn: "Chiangmai" },
+  { province: "เพชรบุรี", provinceEn: "Phetchaburi" },
+  { province: "เพชรบูรณ์", provinceEn: "Phetchabun" },
+  { province: "เลย", provinceEn: "Loei" },
+  { province: "แพร่", provinceEn: "Phrae" },
+  { province: "แม่ฮ่องสอน", provinceEn: "Maehongson" },
+  { province: "ไม่ระบุ", provinceEn: "Not specified" }
 ];

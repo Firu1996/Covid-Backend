@@ -3,7 +3,7 @@ import { BaseController } from "./abstract/BaseController";
 import axios from "axios";
 import { redis } from "../utils/redis";
 import { calulateExpire } from "../utils/calulateExpire";
-import { provinceEnObject } from "../locale/provinceMap";
+import { provinceEnObject, TypeProvinceEnObject } from "../locale/provinceMap";
 type DailyResponse = {
   txn_date: string;
   new_case: number;
@@ -88,11 +88,11 @@ export class covidTrackingController extends BaseController {
           const redisExpire = calulateExpire();
           let newData = null;
           if (data) {
-            newData = data.map((old: any, index: any) => {
+            newData = data.map((old: DailyByProvinces) => {
               let newObj = old;
-              let indexNewData = index;
-              provinceEnObject.forEach((obj, index) => {
-                if (indexNewData === index) {
+
+              provinceEnObject.forEach((obj: TypeProvinceEnObject) => {
+                if (old.province === obj.province) {
                   newObj = Object.assign({}, newObj, { provinceEn: obj.provinceEn });
                 }
               });
