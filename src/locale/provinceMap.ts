@@ -4,18 +4,9 @@ export type TypeProvinceEnObject = {
 };
 
 export const provinceEnObject = [
-  {
-    province: "กระบี่",
-    provinceEn: "Krabi"
-  },
-  {
-    province: "กรุงเทพมหานคร",
-    provinceEn: "Bangkok"
-  },
-  {
-    province: "กาญจนบุรี",
-    provinceEn: "Kanchanaburi"
-  },
+  { province: "กระบี่", provinceEn: "Krabi" },
+  { province: "กรุงเทพมหานคร", provinceEn: "Bangkok" },
+  { province: "กาญจนบุรี", provinceEn: "Kanchanaburi" },
   { province: "กาฬสินธุ์", provinceEn: "Kalasin" },
   { province: "กำแพงเพชร", provinceEn: "Kamphaengphet" },
   { province: "ขอนแก่น", provinceEn: "Khonkaen" },
